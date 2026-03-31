@@ -65,10 +65,10 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center">
-        <p className="text-[9px] text-gray-700 font-black uppercase tracking-[0.3em] hover:text-gray-500 transition-colors duration-300 cursor-default">
-          © {new Date().getFullYear()} Arsenal Fitness. <span className="text-blue-900 hover:text-blue-600 transition-colors duration-300">Built Different.</span>
+      {/* Copyright & Branding */}
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center px-6">
+        <p className="text-[10px] text-gray-600 font-black uppercase tracking-[0.3em] leading-relaxed">
+          © 2026 Arsenal Fitness • Crafted with precision by <span className="text-blue-500 hover:text-blue-400 transition-colors duration-300">VISWAJITH</span>
         </p>
       </div>
     </footer>

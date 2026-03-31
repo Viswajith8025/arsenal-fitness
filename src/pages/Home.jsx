@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout';
 import Hero from '../sections/Hero';
 import About from '../sections/About';
 import TrainingZones from '../sections/TrainingZones';
+import SpecializedTraining from '../sections/SpecializedTraining';
 import Transformations from '../sections/Transformations';
 import Pricing from '../sections/Pricing';
 import Trainers from '../sections/Trainers';
@@ -18,11 +19,12 @@ const Home = () => {
       <About />
       <TrainingZones />
       <Transformations />
-      <Pricing />
       <Trainers />
       <Reviews />
-      <Join />
+      <SpecializedTraining />
+      <Pricing />
       <BMICalculator />
+      <Join />
       <Contact />
     </MainLayout>
   );

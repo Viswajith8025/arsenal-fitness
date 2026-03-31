@@ -13,7 +13,7 @@ const TrainerModal = ({ trainer, onClose }) => {
       />
 
       {/* Modal Content - Mobile Full Screen, Desktop Card */}
-      <div className="relative w-full h-full md:h-auto md:max-w-4xl md:max-h-[85vh] overflow-y-auto bg-[#0c0c0d] border md:border-white/10 md:rounded-[2.5rem] grid grid-cols-1 md:grid-cols-2">
+      <div className="relative w-full h-full md:h-auto md:max-w-4xl md:max-h-[85vh] overflow-y-auto scrollbar-hide bg-[#0c0c0d] border md:border-white/10 md:rounded-[2.5rem] grid grid-cols-1 md:grid-cols-2">
         {/* Image side */}
         <div className="relative h-[45vh] md:h-auto">
           <img
@@ -44,9 +44,9 @@ const TrainerModal = ({ trainer, onClose }) => {
                 {trainer.name}
               </h3>
             </div>
-            {trainer.isOwner && (
+            {trainer.role && (
               <span className="inline-block text-[10px] font-black uppercase tracking-widest bg-blue-600 px-4 py-1.5 rounded-full text-white">
-                Head Coach
+                {trainer.role}
               </span>
             )}
           </div>
@@ -109,6 +109,9 @@ const TrainerCard = ({ trainer, onOpen }) => (
           {trainer.specialty}
         </p>
         <h4 className="text-2xl font-black uppercase tracking-tight text-white">{trainer.name}</h4>
+        <p className="text-[8px] font-black uppercase tracking-[0.2em] text-gray-500 mt-2 border-t border-white/10 pt-2 inline-block">
+          {trainer.role}
+        </p>
       </div>
     </div>
 
@@ -123,11 +126,23 @@ const TrainerCard = ({ trainer, onOpen }) => (
 const Trainers = () => {
   const [selectedTrainer, setSelectedTrainer] = useState(null);
 
+  // Background Scroll Lock
+  React.useEffect(() => {
+    if (selectedTrainer) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedTrainer]);
+
   const trainers = [
     {
       name: 'Rishikesh C P',
       specialty: 'Functional Training',
-      isOwner: true,
+      role: 'OWNER',
       img: '/images/rishi.jpeg',
       qualifications: ['CFSC L1 & L2', 'FMS Certified Specialist', 'ASCA Speed & Power Coach'],
       achievements: ['Founded Arsenal Fitness 2017', 'Personal Coach to 100+ Athletes', 'Pioneer in Calicut Fitness Hub']
@@ -135,6 +150,7 @@ const Trainers = () => {
     {
       name: 'Sharan Rajendran',
       specialty: 'Strength & Power',
+      role: 'HEAD COACH',
       img: '/images/sharan.jpeg',
       qualifications: ['IPF Powerlifting Coach', 'Olympic Weightlifting Cert', 'Kettlebell Athletics Specialist'],
       achievements: ['National Powerlifting Contender', 'Strength Training Lead Specialist', 'Elite Athlete Manager']
@@ -142,6 +158,7 @@ const Trainers = () => {
     {
       name: 'Vignesh',
       specialty: 'Transformation',
+      role: 'SUB COACH',
       img: '/images/vigneshh.webp',
       qualifications: ['HIIT & Body Composition Cert', 'Diet & Nutrition Planning', 'Functional Bodyweight Expert'],
       achievements: ['Success Rate 90%+ Transformations', 'Group Class Lead Instructor', 'Expert Mobility Coach']

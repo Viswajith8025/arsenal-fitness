@@ -28,7 +28,7 @@ const Navbar = () => {
     // Intelligent Scroll Sync: Intersection Observer
     const observerOptions = {
       root: null,
-      rootMargin: '-40% 0px -40% 0px', // Detect when section is centered
+      rootMargin: '-20% 0px -40% 0px', // Trigger when section is near the top half
       threshold: 0
     };
 
@@ -41,8 +41,8 @@ const Navbar = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const sections = ['home', 'about', 'training-zones', 'pricing', 'trainers', 'contact', 'reviews', 'join', 'bmi'];
-    
+    const sections = ['home', 'about', 'transformations', 'trainers', 'reviews', 'bmi', 'contact'];
+
     sections.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
@@ -59,15 +59,17 @@ const Navbar = () => {
     { name: 'About', to: '#about', id: 'about' },
     { name: 'Transformations', to: '#transformations', id: 'transformations' },
     { name: 'Trainers', to: '#trainers', id: 'trainers' },
+    { name: 'Reviews', to: '#reviews', id: 'reviews' },
+    { name: 'BMI', to: '#bmi', id: 'bmi' },
     { name: 'Contact', to: '#contact', id: 'contact' },
   ];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/90 backdrop-blur-xl shadow-2xl shadow-black/50 border-white/10' : 'bg-transparent border-transparent'} border-b`}>
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-20">
-        
+
         {/* Logo Trigger */}
-        <div 
+        <div
           onClick={handleLogoClick}
           className="flex items-center gap-4 cursor-pointer select-none group"
         >
@@ -91,7 +93,7 @@ const Navbar = () => {
             </a>
           ))}
           <a href="#join" className="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-black uppercase tracking-[0.3em] px-10 py-3.5 rounded-lg transition-all shadow-lg shadow-blue-600/10 active:scale-95">
-            JOIN THE ELITE
+            JOIN US
           </a>
         </div>
 
