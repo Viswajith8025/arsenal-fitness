@@ -5,9 +5,9 @@ const About = () => {
     <section id="about" className="bg-black min-h-screen flex flex-col md:flex-row items-stretch">
       {/* Image Side */}
       <div className="md:w-1/2 relative min-h-[50vh] md:min-h-screen">
-        <img 
-          src="/images/about_gym.png" 
-          alt="Arsenal Fitness Interior" 
+        <img
+          src="/images/about_gym.png"
+          alt="Arsenal Fitness Interior"
           className="absolute inset-0 w-full h-full object-cover grayscale opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent md:bg-gradient-to-r md:from-black md:via-black/40 md:to-transparent"></div>
@@ -35,12 +35,12 @@ const About = () => {
 
         <div className="grid grid-cols-2 gap-8">
           <div>
-            <h4 className="text-4xl font-black text-white">15+</h4>
+            <h4 className="text-4xl font-black text-white italic">3</h4>
             <p className="text-[11px] font-black uppercase tracking-widest text-blue-500 mt-1">Elite Coaches</p>
           </div>
           <div>
-            <h4 className="text-4xl font-black text-white">500+</h4>
-            <p className="text-[11px] font-black uppercase tracking-widest text-blue-500 mt-1">Champions Built</p>
+            <h4 className="text-4xl font-black text-white italic">600+</h4>
+            <p className="text-[11px] font-black uppercase tracking-widest text-blue-500 mt-1">Members Enrolled</p>
           </div>
         </div>
 

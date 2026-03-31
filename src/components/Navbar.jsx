@@ -3,15 +3,14 @@ import React, { useState, useEffect, useRef } from 'react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const logoClicks = useRef(0);
   const lastClickTime = useRef(0);
 
   const handleLogoClick = () => {
     const now = Date.now();
-    // Relaxed window for easier trigger
     if (now - lastClickTime.current < 3000) {
       logoClicks.current += 1;
-      console.log(`Logo click: ${logoClicks.current}`);
       if (logoClicks.current >= 5) {
         window.dispatchEvent(new CustomEvent('arsenal-admin-open'));
         logoClicks.current = 0;
@@ -25,46 +24,74 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Intelligent Scroll Sync: Intersection Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -40% 0px', // Detect when section is centered
+      threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const sections = ['home', 'about', 'training-zones', 'pricing', 'trainers', 'contact', 'reviews', 'join', 'bmi'];
+    
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const navLinks = [
-    { name: 'Home', to: '#home' },
-    { name: 'About', to: '#about' },
-    { name: 'Training', to: '#training-zones' },
-    { name: 'Pricing', to: '#pricing' },
-    { name: 'Trainers', to: '#trainers' },
-    { name: 'Contact', to: '#contact' },
+    { name: 'Home', to: '#home', id: 'home' },
+    { name: 'About', to: '#about', id: 'about' },
+    { name: 'Transformations', to: '#transformations', id: 'transformations' },
+    { name: 'Trainers', to: '#trainers', id: 'trainers' },
+    { name: 'Contact', to: '#contact', id: 'contact' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${isScrolled ? 'bg-black/95 shadow-lg shadow-black/50' : 'bg-black'} border-b border-white/5`}>
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/90 backdrop-blur-xl shadow-2xl shadow-black/50 border-white/10' : 'bg-transparent border-transparent'} border-b`}>
+      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-20">
         
         {/* Logo Trigger */}
         <div 
           onClick={handleLogoClick}
-          className="flex items-center gap-3 cursor-pointer select-none"
+          className="flex items-center gap-4 cursor-pointer select-none group"
         >
-          <img src="/images/Logo.jpeg" alt="Arsenal Fitness" className="w-12 h-12 object-contain" />
-          <span className="text-white font-black text-xl tracking-tight italic uppercase">
-            ARSENAL <span className="text-blue-500">FITNESS</span>
+          <img src="/images/Logo.jpeg" alt="Arsenal Fitness" className="w-10 h-10 object-contain transition-transform group-hover:scale-105" />
+          <span className="text-2xl font-black uppercase tracking-tighter text-white transition-all duration-300 group-hover:text-white">
+            Arsenal <span className="text-blue-500">Fitness</span>
           </span>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.to}
-              className="text-[10px] font-black uppercase tracking-widest text-gray-500 hover:text-white transition-colors"
+              className={`text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300 relative py-1
+                ${activeSection === link.id ? 'text-white after:w-full' : 'text-gray-500 hover:text-white after:w-0'}
+                after:absolute after:bottom-[-4px] after:left-0 after:h-px after:bg-blue-500 hover:after:w-full after:transition-all after:duration-500`}
             >
               {link.name}
             </a>
           ))}
-          <a href="#free-trial" className="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-black uppercase tracking-[0.2em] px-8 py-3 transition-all">
-            Free Trial
+          <a href="#join" className="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-black uppercase tracking-[0.3em] px-10 py-3.5 rounded-lg transition-all shadow-lg shadow-blue-600/10 active:scale-95">
+            JOIN THE ELITE
           </a>
         </div>
 
@@ -97,11 +124,11 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#free-trial"
+              href="#join"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-blue-600 text-white text-sm font-black uppercase tracking-widest py-6 px-10 text-center"
             >
-              Start Free Trial
+              JOIN NOW
             </a>
           </div>
         </div>

@@ -7,7 +7,7 @@ import Transformations from '../sections/Transformations';
 import Pricing from '../sections/Pricing';
 import Trainers from '../sections/Trainers';
 import Reviews from '../sections/Reviews';
-import JoinArsenal from '../sections/FreeTrial';
+import Join from '../sections/Join';
 import BMICalculator from '../sections/BMICalculator';
 import Contact from '../sections/Contact';
 
@@ -21,7 +21,7 @@ const Home = () => {
       <Pricing />
       <Trainers />
       <Reviews />
-      <JoinArsenal />
+      <Join />
       <BMICalculator />
       <Contact />
     </MainLayout>

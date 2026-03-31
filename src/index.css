@@ -15,7 +15,9 @@ body {
 }
 
 @layer base {
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
@@ -45,4 +47,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #1d4ed8;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

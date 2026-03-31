@@ -66,8 +66,8 @@ const BMICalculator = () => {
     if (weight && height && age) {
       const hMeters = height / 100;
       const bmi = parseFloat((weight / (hMeters * hMeters)).toFixed(1));
-      let bmr = gender === 'male' 
-        ? 10 * weight + 6.25 * height - 5 * age + 5 
+      let bmr = gender === 'male'
+        ? 10 * weight + 6.25 * height - 5 * age + 5
         : 10 * weight + 6.25 * height - 5 * age - 161;
 
       const tdeeBase = Math.round(bmr * parseFloat(activity));
@@ -88,7 +88,7 @@ const BMICalculator = () => {
     return { label: 'Obese', color: 'text-red-500', desc: 'Urgent focus on consistent activity and nutritional discipline required.' };
   };
 
-  const inputClass = "w-full bg-black border border-white/10 rounded-2xl px-6 py-5 text-base font-medium text-white outline-none focus:border-blue-500/50 transition-colors";
+  const inputClass = "w-full bg-black border border-white/10 rounded-2xl px-6 py-5 text-sm font-bold text-white outline-none focus:border-blue-500/50 transition-colors";
   const labelClass = "text-[10px] font-black uppercase tracking-widest text-gray-600 px-1 mb-2 block";
 
   return (
@@ -98,9 +98,9 @@ const BMICalculator = () => {
         {/* Input Column */}
         <div className="space-y-12">
           <SectionHeader
-            subtitle="Health Scan"
-            title="Bio-Metric"
-            titleAccent="Scan"
+            subtitle="Health Assessment"
+            title="BMI"
+            titleAccent="Calculator"
             centered={false}
           />
 
@@ -140,7 +140,7 @@ const BMICalculator = () => {
                 <option value="1.9">Elite (Professional Training)</option>
               </select>
             </div>
-            
+
             <p className="text-[9px] text-center text-gray-700 font-bold uppercase tracking-widest pt-4">
               *Instant calculation based on Harris-Benedict Equation
             </p>
@@ -155,12 +155,12 @@ const BMICalculator = () => {
                 <RadialGauge value={result.bmi} />
                 <div className="flex-grow space-y-4 text-center md:text-left">
                   <div className="space-y-1">
-                     <p className={`text-[11px] font-black uppercase tracking-widest ${getAssessment(result.bmi).color}`}>
-                       {getAssessment(result.bmi).label}
-                     </p>
-                     <h4 className="text-3xl font-black uppercase tracking-tight text-white leading-tight">
-                       Biological Status
-                     </h4>
+                    <p className={`text-[11px] font-black uppercase tracking-widest ${getAssessment(result.bmi).color}`}>
+                      {getAssessment(result.bmi).label}
+                    </p>
+                    <h4 className="text-3xl font-black uppercase tracking-tight text-white leading-tight">
+                      Results Summary
+                    </h4>
                   </div>
                   <p className="text-sm text-gray-400 font-medium leading-relaxed max-sm">
                     {getAssessment(result.bmi).desc}
@@ -171,17 +171,17 @@ const BMICalculator = () => {
               <div className="space-y-10">
                 {/* Goal Selector */}
                 <div className="space-y-6">
-                   <p className="text-[10px] font-black uppercase tracking-widest text-gray-600 text-center md:text-left">
-                     CHOOSE YOUR MISSION
-                   </p>
-                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-600 text-center md:text-left">
+                    CHOOSE YOUR GOAL
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {['lose', 'maintain', 'gain'].map((g) => (
                       <button
                         key={g}
                         onClick={() => setGoal(g)}
                         className={`py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${goal === g
-                            ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/20'
-                            : 'bg-white/5 text-gray-400 border border-white/5 active:scale-95'
+                          ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/20'
+                          : 'bg-white/5 text-gray-400 border border-white/5 active:scale-95'
                           }`}
                       >
                         {g}
@@ -198,8 +198,8 @@ const BMICalculator = () => {
                   <div className="space-y-4 text-center md:text-left">
                     <p className="text-[10px] text-gray-600 font-black uppercase tracking-widest">Daily Energy Target</p>
                     <div className="flex items-end justify-center md:justify-start gap-2">
-                       <span className="text-6xl font-black text-white italic leading-none">{result.tdee}</span>
-                       <span className="text-[12px] font-black uppercase text-blue-500 pb-1 tracking-widest">kCal</span>
+                      <span className="text-6xl font-black text-white italic leading-none">{result.tdee}</span>
+                      <span className="text-[12px] font-black uppercase text-blue-500 pb-1 tracking-widest">kCal</span>
                     </div>
                   </div>
 
@@ -232,7 +232,7 @@ const BMICalculator = () => {
           ) : (
             <div className="h-[400px] lg:h-full w-full bg-[#0b0b0c] rounded-[2.5rem] border border-dashed border-white/10 flex items-center justify-center p-12 text-center">
               <p className="text-gray-600 font-black uppercase tracking-[0.4em] text-[10px]">
-                Input vitals to initialize scan engine...
+                Enter your details to calculate results...
               </p>
             </div>
           )}

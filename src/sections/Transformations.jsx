@@ -20,7 +20,7 @@ const TransformationCard = ({ beforeImg, afterImg, name, story, result, timeline
         </div>
       </div>
     </div>
-    
+
     <div className="space-y-4 px-2 pb-2">
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-black uppercase italic tracking-tighter text-white">{name}</h3>
@@ -60,13 +60,13 @@ const Transformations = () => {
   return (
     <section id="transformations" className="bg-black py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionHeader 
+        <SectionHeader
           subtitle="Battle Tested"
           title="Proven"
           titleAccent="Transformations"
           centered={true}
         />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-12">
           {transformations.map((item, i) => (
             <TransformationCard key={i} {...item} />

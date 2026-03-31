@@ -42,7 +42,7 @@ const TrainingZones = () => {
   return (
     <section id="training-zones" className="bg-black py-24 md:py-32 px-6">
       <div className="max-w-7xl mx-auto space-y-16">
-        <SectionHeader 
+        <SectionHeader
           subtitle="The Facility"
           title="Training"
           titleAccent="Zones"

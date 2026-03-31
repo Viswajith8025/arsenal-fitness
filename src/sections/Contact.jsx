@@ -63,7 +63,7 @@ const Contact = () => {
           <div className="absolute inset-0 rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.6559831162926!2d75.8006613747982!3d11.286679249575284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65d9f2b8ac7cd%3A0xc391079d7a2c5f5b!2sArsenal%20fitness!5e0!3m2!1sen!2sin!4v1714894582566!5m2!1sen!2sin" 
-              className="w-full h-full border-0 grayscale invert contrast-[1.2]" 
+              className="w-full h-full border-0 opacity-80 hover:opacity-100 transition-opacity duration-500" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
             />

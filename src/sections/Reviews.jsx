@@ -1,26 +1,24 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import SectionHeader from '../components/ui/SectionHeader';
 
 const ReviewCard = ({ name, role, review, rating }) => (
-  <div className="flex-shrink-0 w-[300px] md:w-[450px] bg-[#0b0b0c] border border-white/5 p-8 md:p-12 rounded-[2.5rem] space-y-6 shadow-2xl">
-    <div className="flex gap-1">
+  <div className="flex-shrink-0 w-[320px] md:w-[500px] bg-[#0b0b0c] border border-white/5 p-10 md:p-14 rounded-[3.5rem] space-y-10 shadow-2xl transition-all duration-700 hover:border-blue-500/20 group text-center flex flex-col items-center">
+    <div className="flex gap-2 justify-center">
       {[...Array(5)].map((_, i) => (
-        <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill={i < rating ? "#3b82f6" : "none"} stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill={i < rating ? "#3b82f6" : "none"} stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
       ))}
     </div>
-    <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
+    
+    <p className="text-gray-300 text-sm md:text-lg leading-[1.8] italic font-medium opacity-80 group-hover:opacity-100 transition-opacity">
       "{review}"
     </p>
-    <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-      <div>
-        <h4 className="text-white font-black uppercase tracking-tight">{name}</h4>
-        <p className="text-[10px] font-black uppercase tracking-widest text-blue-500">{role}</p>
-      </div>
-      <div className="w-10 h-10 rounded-full bg-blue-600/10 border border-blue-500/20 flex items-center justify-center">
-        <span className="text-blue-500 font-black text-xs italic">{name[0]}</span>
-      </div>
+
+    <div className="pt-10 border-t border-white/5 w-full">
+      <h4 className="text-white font-black uppercase tracking-tight text-base">{name}</h4>
+      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500/80 mt-1">{role}</p>
     </div>
   </div>
 );
@@ -71,42 +69,82 @@ const Reviews = () => {
     }
   ];
 
+  // Triplicate the array for a seamless marquee loop
+  const marqueeReviews = [...reviews, ...reviews, ...reviews];
+
   return (
-    <section id="reviews" className="bg-black py-24 md:py-32 overflow-hidden border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
-        <SectionHeader 
+    <section id="reviews" className="bg-[#050505] py-24 md:py-32 overflow-hidden border-t border-white/5 relative">
+      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-6 mb-20 text-center md:text-left">
+        <SectionHeader
           subtitle="Community Proof"
           title="Member"
           titleAccent="Insights"
           centered={false}
           className="mb-0"
         />
-        <div className="flex gap-4">
-           <div className="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl">
-              <p className="text-3xl font-black text-white italic">4.9/5</p>
-              <p className="text-[10px] font-black uppercase tracking-widest text-gray-500">Google Rating</p>
-           </div>
-           <div className="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl">
-              <p className="text-3xl font-black text-white italic">170+</p>
-              <p className="text-[10px] font-black uppercase tracking-widest text-gray-500">Total Reviews</p>
-           </div>
-        </div>
       </div>
 
-      <div className="flex gap-8 overflow-x-auto px-6 md:px-[calc((100vw-1280px)/2)] pb-12 scrollbar-none snap-x">
-        {reviews.map((review, i) => (
-          <div key={i} className="snap-center">
-            <ReviewCard {...review} />
-          </div>
-        ))}
+      <div className="relative overflow-visible pb-10">
+        <motion.div 
+          className="flex gap-8"
+          animate={{ x: [0, -2500] }}
+          transition={{ 
+            duration: 40,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          {marqueeReviews.map((review, i) => (
+            <ReviewCard key={i} {...review} />
+          ))}
+        </motion.div>
       </div>
-      
-      {/* Scroll Hint */}
-      <div className="max-w-7xl mx-auto px-6 flex justify-center">
-         <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full">
-            <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Drag to scroll testimonials</span>
-         </div>
+
+      <div className="max-w-7xl mx-auto px-6 mt-16">
+        {/* Premium Stats Row */}
+        <div className="relative group">
+          <div className="absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+          
+          <div className="relative flex flex-wrap justify-center lg:justify-between items-center gap-12 pt-20 border-t border-white/5">
+            <div className="flex gap-12 md:gap-24">
+              <div className="space-y-2 text-center md:text-left">
+                <p className="text-5xl md:text-7xl font-black text-white italic leading-none tracking-tighter">4.9/5</p>
+                <div className="flex flex-col">
+                  <p className="text-[10px] font-black uppercase tracking-[0.5em] text-blue-500">Google Rating</p>
+                  <p className="text-[9px] font-medium text-gray-600 uppercase tracking-widest mt-1">Certified Excellence</p>
+                </div>
+              </div>
+              <div className="space-y-2 text-center md:text-left">
+                <p className="text-5xl md:text-7xl font-black text-white italic leading-none tracking-tighter">170+</p>
+                <div className="flex flex-col">
+                  <p className="text-[10px] font-black uppercase tracking-[0.5em] text-blue-500">Member Reviews</p>
+                  <p className="text-[9px] font-medium text-gray-600 uppercase tracking-widest mt-1">Verified Community</p>
+                </div>
+              </div>
+            </div>
+
+            <a 
+              href="https://www.google.com/maps/place/Arsenal+fitness/@11.286674,75.8032363,17z/data=!4m8!3m7!1s0x3ba65d9f2b8ac7cd:0xc391079d7a2c5f5b!8m2!3d11.286674!4d75.8032363!9m1!1b1!16s%2Fg%2F11t4w7knhn!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex items-center gap-8 bg-white/[0.02] border border-white/10 px-10 py-7 rounded-[2rem] hover:bg-blue-600 hover:border-blue-500 transition-all duration-700 shadow-2xl shadow-black"
+            >
+              <div className="space-y-1">
+                <p className="text-white font-black uppercase tracking-[0.3em] text-[13px] group-hover:text-white transition-colors">View All Reviews</p>
+                <p className="text-gray-600 font-bold uppercase tracking-[0.2em] text-[8px] group-hover:text-blue-200 transition-colors">Trustpilot & Google Maps Integrated</p>
+              </div>
+              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
