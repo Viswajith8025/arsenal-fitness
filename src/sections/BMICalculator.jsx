@@ -88,8 +88,8 @@ const BMICalculator = () => {
     return { label: 'Obese', color: 'text-red-500', desc: 'Urgent focus on consistent activity and nutritional discipline required.' };
   };
 
-  const inputClass = "w-full bg-black border border-white/10 rounded-2xl px-6 py-5 text-sm font-bold text-white outline-none focus:border-blue-500/50 transition-colors";
-  const labelClass = "text-[10px] font-black uppercase tracking-widest text-gray-600 px-1 mb-2 block";
+  const inputClass = "w-full bg-black border border-white/10 rounded-2xl px-6 py-5 text-sm font-serif font-black text-white outline-none focus:border-blue-500/50 transition-colors uppercase";
+  const labelClass = "text-[10px] font-serif font-black uppercase tracking-[0.3em] text-gray-600 px-1 mb-2 block";
 
   return (
     <section id="bmi" className="bg-black py-24 md:py-32 px-6 border-t border-white/5">
@@ -158,7 +158,7 @@ const BMICalculator = () => {
                     <p className={`text-[11px] font-black uppercase tracking-widest ${getAssessment(result.bmi).color}`}>
                       {getAssessment(result.bmi).label}
                     </p>
-                    <h4 className="text-3xl font-black uppercase tracking-tight text-white leading-tight">
+                    <h4 className="text-3xl font-serif font-black uppercase tracking-tight text-white leading-tight">
                       Results Summary
                     </h4>
                   </div>
@@ -171,7 +171,7 @@ const BMICalculator = () => {
               <div className="space-y-10">
                 {/* Goal Selector */}
                 <div className="space-y-6">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-600 text-center md:text-left">
+                  <p className="text-[10px] font-serif font-black uppercase tracking-[0.3em] text-gray-600 text-center md:text-left">
                     CHOOSE YOUR GOAL
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -179,7 +179,7 @@ const BMICalculator = () => {
                       <button
                         key={g}
                         onClick={() => setGoal(g)}
-                        className={`py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${goal === g
+                        className={`py-4 rounded-2xl text-[10px] font-serif font-black uppercase tracking-widest transition-all ${goal === g
                           ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/20'
                           : 'bg-white/5 text-gray-400 border border-white/5 active:scale-95'
                           }`}
@@ -196,10 +196,10 @@ const BMICalculator = () => {
                 {/* Main Metric */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-end pt-8 border-t border-white/5">
                   <div className="space-y-4 text-center md:text-left">
-                    <p className="text-[10px] text-gray-600 font-black uppercase tracking-widest">Daily Energy Target</p>
+                    <p className="text-[10px] text-gray-600 font-serif font-black uppercase tracking-[0.3em]">Daily Energy Target</p>
                     <div className="flex items-end justify-center md:justify-start gap-2">
-                      <span className="text-6xl font-black text-white italic leading-none">{result.tdee}</span>
-                      <span className="text-[12px] font-black uppercase text-blue-500 pb-1 tracking-widest">kCal</span>
+                       <span className="text-6xl font-serif font-black text-white italic leading-none">{result.tdee}</span>
+                       <span className="text-[12px] font-serif font-black uppercase text-blue-500 pb-1 tracking-widest">kCal</span>
                     </div>
                   </div>
 
@@ -231,7 +231,7 @@ const BMICalculator = () => {
             </div>
           ) : (
             <div className="h-[400px] lg:h-full w-full bg-[#0b0b0c] rounded-[2.5rem] border border-dashed border-white/10 flex items-center justify-center p-12 text-center">
-              <p className="text-gray-600 font-black uppercase tracking-[0.4em] text-[10px]">
+              <p className="text-gray-600 font-serif font-black uppercase tracking-[0.3em] text-[10px]">
                 Enter your details to calculate results...
               </p>
             </div>

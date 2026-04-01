@@ -74,7 +74,7 @@ const Navbar = () => {
           className="flex items-center gap-4 cursor-pointer select-none group"
         >
           <img src="/images/Logo.jpeg" alt="Arsenal Fitness" className="w-10 h-10 object-contain transition-transform group-hover:scale-105" />
-          <span className="text-2xl font-black uppercase tracking-tighter text-white transition-all duration-300 group-hover:text-white">
+          <span className="text-2xl font-serif font-black uppercase tracking-tighter text-white transition-all duration-300 group-hover:text-white">
             Arsenal <span className="text-blue-500">Fitness</span>
           </span>
         </div>
@@ -85,14 +85,14 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.to}
-              className={`text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300 relative py-1
+              className={`text-[10px] font-serif font-black uppercase tracking-[0.3em] transition-all duration-300 relative py-1
                 ${activeSection === link.id ? 'text-white after:w-full' : 'text-gray-500 hover:text-white after:w-0'}
                 after:absolute after:bottom-[-4px] after:left-0 after:h-px after:bg-blue-500 hover:after:w-full after:transition-all after:duration-500`}
             >
               {link.name}
             </a>
           ))}
-          <a href="#join" className="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-black uppercase tracking-[0.3em] px-10 py-3.5 rounded-lg transition-all shadow-lg shadow-blue-600/10 active:scale-95">
+          <a href="#join" className="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-serif font-black uppercase tracking-[0.3em] px-10 py-3.5 rounded-lg transition-all shadow-lg shadow-blue-600/10 active:scale-95">
             JOIN US
           </a>
         </div>
@@ -120,15 +120,15 @@ const Navbar = () => {
                 key={link.name}
                 href={link.to}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-4xl font-black uppercase tracking-tighter text-white hover:text-blue-500 transition-colors"
+                className="text-4xl font-serif font-black uppercase tracking-tighter text-white hover:text-blue-500 transition-colors"
               >
                 {link.name}
               </a>
             ))}
             <a
-              href="#join"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="bg-blue-600 text-white text-sm font-black uppercase tracking-widest py-6 px-10 text-center"
+              href="#join"
+              className="bg-blue-600 text-white text-sm font-serif font-black uppercase tracking-widest py-6 px-10 text-center"
             >
               JOIN NOW
             </a>

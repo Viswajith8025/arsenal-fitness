@@ -11,14 +11,14 @@ const ReviewCard = ({ name, role, review, rating }) => (
         </svg>
       ))}
     </div>
-    
-    <p className="text-gray-300 text-sm md:text-lg leading-[1.8] italic font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+
+    <p className="text-gray-300 text-sm md:text-lg leading-[1.8] font-serif italic font-medium opacity-80 group-hover:opacity-100 transition-opacity">
       "{review}"
     </p>
 
     <div className="pt-10 border-t border-white/5 w-full">
-      <h4 className="text-white font-black uppercase tracking-tight text-base">{name}</h4>
-      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500/80 mt-1">{role}</p>
+      <h4 className="text-white font-serif font-black uppercase tracking-tight text-base">{name}</h4>
+      <p className="text-[10px] font-serif font-black uppercase tracking-[0.4em] text-blue-500/80 mt-1">{role}</p>
     </div>
   </div>
 );
@@ -76,7 +76,7 @@ const Reviews = () => {
     <section id="reviews" className="bg-[#050505] py-24 md:py-32 overflow-hidden border-t border-white/5 relative">
       <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center md:text-left">
         <SectionHeader
           subtitle="Community Proof"
@@ -88,10 +88,10 @@ const Reviews = () => {
       </div>
 
       <div className="relative overflow-visible pb-10">
-        <motion.div 
+        <motion.div
           className="flex gap-8"
           animate={{ x: [0, -2500] }}
-          transition={{ 
+          transition={{
             duration: 40,
             repeat: Infinity,
             ease: "linear"
@@ -107,34 +107,34 @@ const Reviews = () => {
         {/* Premium Stats Row */}
         <div className="relative group">
           <div className="absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-          
+
           <div className="relative flex flex-wrap justify-center lg:justify-between items-center gap-12 pt-20 border-t border-white/5">
             <div className="flex gap-12 md:gap-24">
               <div className="space-y-2 text-center md:text-left">
-                <p className="text-5xl md:text-7xl font-black text-white italic leading-none tracking-tighter">4.9/5</p>
+                <p className="text-5xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">4.9/5</p>
                 <div className="flex flex-col">
-                  <p className="text-[10px] font-black uppercase tracking-[0.5em] text-blue-500">Google Rating</p>
-                  <p className="text-[9px] font-medium text-gray-600 uppercase tracking-widest mt-1">Certified Excellence</p>
+                  <p className="text-[10px] font-serif font-black uppercase tracking-[0.5em] text-blue-500">Google Rating</p>
+                  <p className="text-[9px] font-serif font-medium text-gray-600 uppercase tracking-widest mt-1">Certified Excellence</p>
                 </div>
               </div>
               <div className="space-y-2 text-center md:text-left">
-                <p className="text-5xl md:text-7xl font-black text-white italic leading-none tracking-tighter">170+</p>
+                <p className="text-5xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">170+</p>
                 <div className="flex flex-col">
-                  <p className="text-[10px] font-black uppercase tracking-[0.5em] text-blue-500">Member Reviews</p>
-                  <p className="text-[9px] font-medium text-gray-600 uppercase tracking-widest mt-1">Verified Community</p>
+                  <p className="text-[10px] font-serif font-black uppercase tracking-[0.5em] text-blue-500">Member Reviews</p>
+                  <p className="text-[9px] font-serif font-medium text-gray-600 uppercase tracking-widest mt-1">Verified Community</p>
                 </div>
               </div>
             </div>
 
-            <a 
+            <a
               href="https://www.google.com/maps/place/Arsenal+fitness/@11.286674,75.8032363,17z/data=!4m8!3m7!1s0x3ba65d9f2b8ac7cd:0xc391079d7a2c5f5b!8m2!3d11.286674!4d75.8032363!9m1!1b1!16s%2Fg%2F11t4w7knhn!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center gap-8 bg-white/[0.02] border border-white/10 px-10 py-7 rounded-[2rem] hover:bg-blue-600 hover:border-blue-500 transition-all duration-700 shadow-2xl shadow-black"
             >
               <div className="space-y-1">
-                <p className="text-white font-black uppercase tracking-[0.3em] text-[13px] group-hover:text-white transition-colors">View All Reviews</p>
-                <p className="text-gray-600 font-bold uppercase tracking-[0.2em] text-[8px] group-hover:text-blue-200 transition-colors">Trustpilot & Google Maps Integrated</p>
+                <p className="text-white font-serif font-black uppercase tracking-[0.3em] text-[13px] group-hover:text-white transition-colors">View All Reviews</p>
+                <p className="text-gray-600 font-serif font-bold uppercase tracking-[0.2em] text-[8px] group-hover:text-blue-200 transition-colors">Trustpilot & Google Maps Integrated</p>
               </div>
               <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/20 transition-all">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

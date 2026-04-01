@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from '../components/ui/SectionHeader';
 
-const TrainingCard = ({ title, desc, highlights, cta, icon }) => (
-  <motion.div 
+const TrainingCard = ({ title, desc, highlights, cta, icon, whatsappUrl }) => (
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -17,7 +17,7 @@ const TrainingCard = ({ title, desc, highlights, cta, icon }) => (
         <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-blue-500 mb-8 border border-white/5">
           {icon}
         </div>
-        <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-none">
+        <h3 className="text-3xl md:text-4xl font-serif font-black uppercase tracking-tight text-white leading-none">
           {title}
         </h3>
         <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed max-w-sm">
@@ -29,16 +29,18 @@ const TrainingCard = ({ title, desc, highlights, cta, icon }) => (
         {highlights.map((item, idx) => (
           <div key={idx} className="flex items-center gap-4">
             <div className="w-1.5 h-1.5 bg-blue-600 rounded-full shadow-[0_0_8px_rgba(37,99,235,0.6)]" />
-            <span className="text-[11px] md:text-xs font-black uppercase tracking-[0.2em] text-gray-500">
+            <span className="text-[11px] md:text-xs font-serif font-black uppercase tracking-[0.2em] text-gray-500">
               {item}
             </span>
           </div>
         ))}
       </div>
 
-      <a 
-        href="#join"
-        className="inline-block w-full bg-white/5 hover:bg-blue-600 border border-white/10 hover:border-blue-600 text-white font-black uppercase tracking-[0.3em] py-5 text-[11px] rounded-xl transition-all text-center active:scale-[0.98]"
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block w-full bg-white/5 hover:bg-blue-600 border border-white/10 hover:border-blue-600 text-white font-serif font-black uppercase tracking-[0.3em] py-5 text-[11px] rounded-xl transition-all text-center active:scale-[0.98]"
       >
         {cta}
       </a>
@@ -63,6 +65,7 @@ const SpecializedTraining = () => {
             desc="Get expert coaching at your doorstep. Personalized workouts designed for your goals, schedule, and comfort."
             highlights={['One-on-one guidance', 'Flexible timing', 'Personalized plans']}
             cta="Book Home Session"
+            whatsappUrl="https://wa.me/917306675524?text=Hi%2C%20I%20am%20interested%20in%20In-Home%20Personal%20Training.%20Can%20you%20please%20provide%20more%20details%3F"
             icon={
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -75,6 +78,7 @@ const SpecializedTraining = () => {
             desc="Train from anywhere with structured workout and diet plans, progress tracking, and expert support."
             highlights={['Remote coaching', 'Custom workout & diet plans', 'Progress tracking']}
             cta="Start Online Program"
+            whatsappUrl="https://wa.me/917306675524?text=Hi%2C%20I%20am%20interested%20in%20the%20Online%20Training%20program.%20Can%20you%20please%20provide%20more%20details%3F"
             icon={
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
