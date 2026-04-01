@@ -22,7 +22,7 @@ const PricingCard = ({ tier, subtitle, prices, isPopular, badge, footerNote }) =
     viewport={{ once: true }}
     whileHover={{ y: -8 }}
     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-    className={`relative flex-1 bg-[#0a0a0a] border ${isPopular ? 'border-blue-500 shadow-[0_0_100px_rgba(59,130,246,0.1)]' : 'border-white/10'} p-10 md:p-14 flex flex-col rounded-[2.5rem] overflow-hidden transition-all duration-500 group`}
+    className={`relative flex-1 bg-[#0a0a0a] border ${isPopular ? 'border-blue-500 shadow-[0_0_100px_rgba(59,130,246,0.1)]' : 'border-white/10'} p-8 sm:p-10 md:p-14 flex flex-col rounded-[2.5rem] overflow-hidden transition-all duration-500 group`}
   >
     {/* Highlight Glow */}
     {isPopular && (
@@ -130,7 +130,7 @@ const Pricing = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20 md:mb-24">
           <div className="space-y-4">
             <span className="text-blue-500 text-[10px] font-serif font-black uppercase tracking-[0.6em] block">Our Programs</span>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-black uppercase tracking-tight text-white leading-none">
+            <h2 className="text-3xl md:text-6xl lg:text-7xl font-serif font-black uppercase tracking-tight text-white leading-none">
               INVEST IN <br />
               <span className="text-blue-500 italic">RESULTS</span>
             </h2>
@@ -152,7 +152,7 @@ const Pricing = () => {
 
         {/* Dynamic Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12 pointer-events-none opacity-[0.02] select-none whitespace-nowrap overflow-hidden">
-          <span className="text-[20rem] font-black text-white leading-none">ARSENAL ARSENAL ARSENAL</span>
+          <span className="text-[10rem] md:text-[20rem] font-black text-white leading-none">ARSENAL ARSENAL ARSENAL</span>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import SectionHeader from '../components/ui/SectionHeader';
 
 const ReviewCard = ({ name, role, review, rating }) => (
-  <div className="flex-shrink-0 w-[320px] md:w-[500px] bg-[#0b0b0c] border border-white/5 p-10 md:p-14 rounded-[3.5rem] space-y-10 shadow-2xl transition-all duration-700 hover:border-blue-500/20 group text-center flex flex-col items-center">
+  <div className="flex-shrink-0 w-[85vw] md:w-[500px] bg-[#0b0b0c] border border-white/5 p-10 md:p-14 rounded-[3rem] md:rounded-[3.5rem] space-y-10 shadow-2xl transition-all duration-700 hover:border-blue-500/20 group text-center flex flex-col items-center">
     <div className="flex gap-2 justify-center">
       {[...Array(5)].map((_, i) => (
         <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill={i < rating ? "#3b82f6" : "none"} stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
@@ -111,14 +111,14 @@ const Reviews = () => {
           <div className="relative flex flex-wrap justify-center lg:justify-between items-center gap-12 pt-20 border-t border-white/5">
             <div className="flex gap-12 md:gap-24">
               <div className="space-y-2 text-center md:text-left">
-                <p className="text-5xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">4.9/5</p>
+                <p className="text-4xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">4.9/5</p>
                 <div className="flex flex-col">
                   <p className="text-[10px] font-serif font-black uppercase tracking-[0.5em] text-blue-500">Google Rating</p>
                   <p className="text-[9px] font-serif font-medium text-gray-600 uppercase tracking-widest mt-1">Certified Excellence</p>
                 </div>
               </div>
               <div className="space-y-2 text-center md:text-left">
-                <p className="text-5xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">170+</p>
+                <p className="text-4xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">170+</p>
                 <div className="flex flex-col">
                   <p className="text-[10px] font-serif font-black uppercase tracking-[0.5em] text-blue-500">Member Reviews</p>
                   <p className="text-[9px] font-serif font-medium text-gray-600 uppercase tracking-widest mt-1">Verified Community</p>
@@ -130,7 +130,7 @@ const Reviews = () => {
               href="https://www.google.com/maps/place/Arsenal+fitness/@11.286674,75.8032363,17z/data=!4m8!3m7!1s0x3ba65d9f2b8ac7cd:0xc391079d7a2c5f5b!8m2!3d11.286674!4d75.8032363!9m1!1b1!16s%2Fg%2F11t4w7knhn!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-8 bg-white/[0.02] border border-white/10 px-10 py-7 rounded-[2rem] hover:bg-blue-600 hover:border-blue-500 transition-all duration-700 shadow-2xl shadow-black"
+              className="group relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8 bg-white/[0.02] border border-white/10 px-8 py-6 sm:px-10 sm:py-7 rounded-[2rem] hover:bg-blue-600 hover:border-blue-500 transition-all duration-700 shadow-2xl shadow-black w-full sm:w-auto"
             >
               <div className="space-y-1">
                 <p className="text-white font-serif font-black uppercase tracking-[0.3em] text-[13px] group-hover:text-white transition-colors">View All Reviews</p>

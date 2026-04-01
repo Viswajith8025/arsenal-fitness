@@ -8,7 +8,7 @@ const SectionHeader = ({ subtitle, title, titleAccent, centered = true, classNam
           {subtitle}
         </span>
       )}
-      <h2 className="text-4xl md:text-7xl font-serif font-black uppercase tracking-tight text-white leading-[1.1] md:leading-[0.95]">
+      <h2 className="text-3xl md:text-7xl font-serif font-black uppercase tracking-tight text-white leading-[1.1] md:leading-[0.95]">
         {title}{' '}
         <span className="text-blue-500">{titleAccent}</span>
       </h2>

@@ -33,9 +33,9 @@ const Join = () => {
           <div className="space-y-8 text-left">
             <div className="space-y-4">
               <span className="text-blue-500 text-[10px] font-black uppercase tracking-[0.6em] block">Join the Community</span>
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black uppercase tracking-tight text-white leading-none">
+              <h2 className="text-4xl md:text-7xl lg:text-8xl font-serif font-black uppercase tracking-tight text-white leading-none">
                 START YOUR <br />
-                <span className="text-blue-500 italic text-4xl md:text-6xl lg:text-7xl">JOURNEY</span>
+                <span className="text-blue-500 italic text-3xl md:text-6xl lg:text-7xl">JOURNEY</span>
               </h2>
             </div>
 
@@ -55,7 +55,7 @@ const Join = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   onSubmit={handleSubmit}
-                  className="space-y-8 bg-black border border-white/10 p-10 md:p-14 rounded-[2.5rem] shadow-2xl shadow-black/80"
+                  className="space-y-8 bg-black border border-white/10 p-8 sm:p-10 md:p-14 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl shadow-black/80"
                 >
                   <div className="space-y-6">
                     <div className="space-y-3">

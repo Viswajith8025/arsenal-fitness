@@ -7,7 +7,7 @@ const TrainingCard = ({ title, desc, highlights, cta, icon, whatsappUrl }) => (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="flex-1 bg-[#0b0b0c] border border-white/5 p-10 md:p-14 rounded-[2.5rem] shadow-2xl relative overflow-hidden group"
+    className="flex-1 bg-[#0b0b0c] border border-white/5 p-8 sm:p-10 md:p-14 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl relative overflow-hidden group"
   >
     {/* Background Accent Glow */}
     <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-[60px] rounded-full -mr-16 -mt-16 group-hover:bg-blue-500/10 transition-colors" />

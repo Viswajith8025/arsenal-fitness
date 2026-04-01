@@ -105,7 +105,7 @@ const BMICalculator = () => {
           />
 
           <div className="bg-[#0b0b0c] border border-white/5 rounded-[2.5rem] p-8 md:p-12 space-y-8 shadow-2xl">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className={labelClass}>Weight (kg)</label>
                 <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className={inputClass} />
@@ -116,17 +116,22 @@ const BMICalculator = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className={labelClass}>Age</label>
                 <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className={inputClass} />
               </div>
               <div className="space-y-2">
                 <label className={labelClass}>Gender</label>
-                <select value={gender} onChange={(e) => setGender(e.target.value)} className={`${inputClass} appearance-none`}>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
+                <div className="relative">
+                  <select value={gender} onChange={(e) => setGender(e.target.value)} className={`${inputClass} appearance-none pr-10`}>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -204,18 +209,18 @@ const BMICalculator = () => {
                   </div>
 
                   {/* Micro Macros */}
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-white/5 p-4 rounded-2xl text-center">
-                      <p className="text-[8px] font-black uppercase text-gray-500 mb-2">Protein</p>
-                      <span className="text-sm font-black text-white">{Math.round((result.tdee * 0.3) / 4)}g</span>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-white/5 p-3 rounded-xl text-center">
+                      <p className="text-[7px] font-black uppercase text-gray-500 mb-1">Protein</p>
+                      <span className="text-xs font-black text-white">{Math.round((result.tdee * 0.3) / 4)}g</span>
                     </div>
-                    <div className="bg-white/5 p-4 rounded-2xl text-center">
-                      <p className="text-[8px] font-black uppercase text-gray-500 mb-2">Carbs</p>
-                      <span className="text-sm font-black text-white">{Math.round((result.tdee * 0.4) / 4)}g</span>
+                    <div className="bg-white/5 p-3 rounded-xl text-center">
+                      <p className="text-[7px] font-black uppercase text-gray-500 mb-1">Carbs</p>
+                      <span className="text-xs font-black text-white">{Math.round((result.tdee * 0.4) / 4)}g</span>
                     </div>
-                    <div className="bg-white/5 p-4 rounded-2xl text-center">
-                      <p className="text-[8px] font-black uppercase text-gray-500 mb-2">Fats</p>
-                      <span className="text-sm font-black text-white">{Math.round((result.tdee * 0.3) / 9)}g</span>
+                    <div className="bg-white/5 p-3 rounded-xl text-center">
+                      <p className="text-[7px] font-black uppercase text-gray-500 mb-1">Fats</p>
+                      <span className="text-xs font-black text-white">{Math.round((result.tdee * 0.3) / 9)}g</span>
                     </div>
                   </div>
                 </div>

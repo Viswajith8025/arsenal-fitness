@@ -17,7 +17,7 @@ const About = () => {
       <div className="md:w-1/2 flex flex-col justify-center px-8 md:px-16 py-20 md:py-32 space-y-10 bg-black">
         <div className="space-y-2">
           <span className="text-blue-500 text-[10px] font-serif font-black uppercase tracking-[0.6em]">Our Philosophy</span>
-          <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tight text-white leading-tight">
+          <h2 className="text-3xl md:text-6xl font-serif font-black uppercase tracking-tight text-white leading-tight">
             This is not a gym.{' '}
             <span className="text-blue-500">This is a transformation hub.</span>
           </h2>
@@ -33,7 +33,7 @@ const About = () => {
           Based in Malaparamba, Kozhikode, Arsenal Fitness is Kerala's premier destination for high-intensity training and functional excellence. Our facility is engineered for those who demand more from their bodies.
         </p>
 
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div>
             <h4 className="text-4xl font-serif font-black text-white italic tracking-tighter">3</h4>
             <p className="text-[11px] font-serif font-black uppercase tracking-widest text-blue-500 mt-1">Elite Coaches</p>

@@ -13,7 +13,7 @@ const Hero = () => {
 
       {/* Background Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
-        <h2 className="text-[20rem] font-serif font-black uppercase tracking-tighter text-white">
+        <h2 className="text-[10rem] md:text-[20rem] font-serif font-black uppercase tracking-tighter text-white">
           ARSENAL
         </h2>
       </div>
@@ -27,16 +27,16 @@ const Hero = () => {
           className="flex flex-col items-center"
         >
           <div className="mb-12 space-y-4">
-            <p className="text-gray-500 text-[10px] md:text-sm font-serif font-black uppercase tracking-[0.8em] pl-[0.8em]">
+            <p className="text-gray-500 text-[10px] md:text-sm font-serif font-black uppercase tracking-[0.2em] md:tracking-[0.8em] pl-[0.2em] md:pl-[0.8em]">
               ARSENAL FITNESS MALAPARAMBA
             </p>
             <div className="w-16 h-px bg-blue-600/30 mx-auto rounded-full" />
           </div>
 
-          <h1 className="text-[6rem] md:text-[13rem] font-serif italic font-black uppercase text-white leading-[0.8] mb-2">
+          <h1 className="text-[4.5rem] md:text-[13rem] font-serif italic font-black uppercase text-white leading-[0.8] mb-2">
             BUILT
           </h1>
-          <h1 className="text-[6rem] md:text-[13rem] font-serif font-black uppercase tracking-tight text-blue-500 leading-[0.8] drop-shadow-[0_0_40px_rgba(59,130,246,0.6)]">
+          <h1 className="text-[4.5rem] md:text-[13rem] font-serif font-black uppercase tracking-tight text-blue-500 leading-[0.8] drop-shadow-[0_0_40px_rgba(59,130,246,0.6)]">
             DIFFERENT
           </h1>
         </motion.div>
