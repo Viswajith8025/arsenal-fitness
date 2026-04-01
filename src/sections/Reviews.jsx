@@ -17,8 +17,8 @@ const ReviewCard = ({ name, role, review, rating }) => (
     </p>
 
     <div className="pt-10 border-t border-white/5 w-full">
-      <h4 className="text-white font-serif font-black uppercase tracking-tight text-base">{name}</h4>
-      <p className="text-[10px] font-serif font-black uppercase tracking-[0.4em] text-blue-500/80 mt-1">{role}</p>
+      <h4 className="text-white font-serif font-black uppercase tracking-tighter text-base">{name}</h4>
+      <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500/80 mt-1">{role}</p>
     </div>
   </div>
 );
@@ -113,15 +113,15 @@ const Reviews = () => {
               <div className="space-y-2 text-center md:text-left">
                 <p className="text-4xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">4.9/5</p>
                 <div className="flex flex-col">
-                  <p className="text-[10px] font-serif font-black uppercase tracking-[0.5em] text-blue-500">Google Rating</p>
-                  <p className="text-[9px] font-serif font-medium text-gray-600 uppercase tracking-widest mt-1">Certified Excellence</p>
+                  <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500">Google Rating</p>
+                  <p className="text-[10px] font-serif font-black uppercase tracking-tighter text-gray-600 mt-1">Certified Excellence</p>
                 </div>
               </div>
               <div className="space-y-2 text-center md:text-left">
                 <p className="text-4xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">170+</p>
                 <div className="flex flex-col">
-                  <p className="text-[10px] font-serif font-black uppercase tracking-[0.5em] text-blue-500">Member Reviews</p>
-                  <p className="text-[9px] font-serif font-medium text-gray-600 uppercase tracking-widest mt-1">Verified Community</p>
+                  <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500">Member Reviews</p>
+                  <p className="text-[10px] font-serif font-black uppercase tracking-tighter text-gray-600 mt-1">Verified Community</p>
                 </div>
               </div>
             </div>
@@ -133,8 +133,8 @@ const Reviews = () => {
               className="group relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8 bg-white/[0.02] border border-white/10 px-8 py-6 sm:px-10 sm:py-7 rounded-[2rem] hover:bg-blue-600 hover:border-blue-500 transition-all duration-700 shadow-2xl shadow-black w-full sm:w-auto"
             >
               <div className="space-y-1">
-                <p className="text-white font-serif font-black uppercase tracking-[0.3em] text-[13px] group-hover:text-white transition-colors">View All Reviews</p>
-                <p className="text-gray-600 font-serif font-bold uppercase tracking-[0.2em] text-[8px] group-hover:text-blue-200 transition-colors">Trustpilot & Google Maps Integrated</p>
+                <p className="text-white font-serif font-black uppercase tracking-tighter text-[14px] group-hover:text-white transition-colors">View All Reviews</p>
+                <p className="text-gray-600 font-serif font-black uppercase tracking-tighter text-[10px] group-hover:text-blue-200 transition-colors">Trustpilot & Google Maps Integrated</p>
               </div>
               <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/20 transition-all">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

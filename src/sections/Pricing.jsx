@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 
 const PriceRow = ({ label, price }) => (
   <div className="flex justify-between items-center py-4 border-b border-white/5 last:border-0 hover:bg-blue-500/[0.03] px-6 -mx-6 rounded-2xl transition-all duration-300 group/row">
-    <span className="text-gray-400 text-[10px] font-serif font-black uppercase tracking-[0.3em] group-hover/row:text-gray-200 transition-colors">
+    <span className="text-gray-400 text-[12px] font-serif font-black uppercase tracking-tighter group-hover/row:text-gray-200 transition-colors">
       {label}
     </span>
     <div className="flex items-center gap-1.5">
-      <span className="text-blue-500 text-[9px] font-serif font-bold opacity-70">₹</span>
+      <span className="text-blue-500 text-[10px] font-serif font-black opacity-70">₹</span>
       <span className="text-white font-serif font-black text-xl tracking-tighter leading-none group-hover/row:text-blue-400 transition-colors">
         {price}
       </span>
@@ -32,11 +32,11 @@ const PricingCard = ({ tier, subtitle, prices, isPopular, badge, footerNote }) =
     {/* Header Section */}
     <div className="relative mb-12">
       <div className="flex justify-between items-start mb-4">
-        <h3 className="text-blue-500 text-[9px] font-serif font-black uppercase tracking-[0.4em] italic">
+        <h3 className="text-blue-500 text-[12px] font-serif font-black uppercase tracking-tighter italic">
           {tier}
         </h3>
         {badge && (
-          <span className="bg-blue-600 text-white text-[8px] font-serif font-black uppercase tracking-[0.3em] px-4 py-1.5 rounded-full shadow-lg shadow-blue-600/30">
+          <span className="bg-blue-600 text-white text-[10px] font-serif font-black uppercase tracking-tighter px-4 py-1.5 rounded-full shadow-lg shadow-blue-600/30">
             {badge}
           </span>
         )}
@@ -45,7 +45,7 @@ const PricingCard = ({ tier, subtitle, prices, isPopular, badge, footerNote }) =
       <h2 className="text-3xl md:text-5xl font-serif font-black text-white uppercase tracking-tighter leading-none mb-3 group-hover:scale-[1.02] transition-transform origin-left duration-500">
         {subtitle || 'Membership'}
       </h2>
-      <p className="text-gray-500 text-[9px] font-serif font-black uppercase tracking-[0.3em] italic opacity-60">
+      <p className="text-gray-500 text-[12px] font-serif font-black uppercase tracking-tighter italic opacity-60">
         Select Your Plan
       </p>
     </div>
@@ -61,7 +61,7 @@ const PricingCard = ({ tier, subtitle, prices, isPopular, badge, footerNote }) =
     <div className="relative mt-auto space-y-10">
       <div className="flex items-center gap-6 opacity-30">
         <div className="w-full h-px bg-white/20" />
-        <span className="text-gray-400 text-[8px] font-bold uppercase tracking-[0.5em] whitespace-nowrap">
+        <span className="text-gray-400 text-[10px] font-serif font-black uppercase tracking-tighter whitespace-nowrap">
           {footerNote || 'Full Membership Access'}
         </span>
         <div className="w-full h-px bg-white/20" />
@@ -69,7 +69,7 @@ const PricingCard = ({ tier, subtitle, prices, isPopular, badge, footerNote }) =
 
       <a
         href="#join"
-        className={`group relative flex items-center justify-center gap-5 w-full py-6 text-[11px] font-serif font-black uppercase tracking-[0.5em] rounded-2xl transition-all duration-500 ${isPopular
+        className={`group relative flex items-center justify-center gap-5 w-full py-6 text-[14px] font-serif font-black uppercase tracking-tighter rounded-2xl transition-all duration-500 ${isPopular
           ? 'bg-blue-600 text-white shadow-2xl shadow-blue-600/20 hover:bg-blue-700 active:scale-[0.97]'
           : 'bg-white/5 text-white border border-white/10 hover:bg-white/10 active:scale-[0.97]'
           }`}
@@ -129,8 +129,8 @@ const Pricing = () => {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20 md:mb-24">
           <div className="space-y-4">
-            <span className="text-blue-500 text-[10px] font-serif font-black uppercase tracking-[0.6em] block">Our Programs</span>
-            <h2 className="text-3xl md:text-6xl lg:text-7xl font-serif font-black uppercase tracking-tight text-white leading-none">
+            <span className="text-blue-500 text-[12px] font-serif font-black uppercase tracking-tighter block">Our Programs</span>
+            <h2 className="text-3xl md:text-6xl lg:text-7xl font-serif font-black uppercase tracking-tighter text-white leading-none">
               INVEST IN <br />
               <span className="text-blue-500 italic">RESULTS</span>
             </h2>
@@ -152,7 +152,7 @@ const Pricing = () => {
 
         {/* Dynamic Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12 pointer-events-none opacity-[0.02] select-none whitespace-nowrap overflow-hidden">
-          <span className="text-[10rem] md:text-[20rem] font-black text-white leading-none">ARSENAL ARSENAL ARSENAL</span>
+          <span className="text-[10rem] md:text-[20rem] font-serif font-black uppercase tracking-tighter text-white leading-none">ARSENAL ARSENAL ARSENAL</span>
         </div>
       </div>
     </section>

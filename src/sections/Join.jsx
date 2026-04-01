@@ -32,8 +32,8 @@ const Join = () => {
           {/* Left Column: Join Content */}
           <div className="space-y-8 text-left">
             <div className="space-y-4">
-              <span className="text-blue-500 text-[10px] font-black uppercase tracking-[0.6em] block">Join the Community</span>
-              <h2 className="text-4xl md:text-7xl lg:text-8xl font-serif font-black uppercase tracking-tight text-white leading-none">
+              <span className="text-blue-500 text-[12px] font-serif font-black uppercase tracking-tighter block">Join the Community</span>
+              <h2 className="text-4xl md:text-7xl lg:text-8xl font-serif font-black uppercase tracking-tighter text-white leading-none">
                 START YOUR <br />
                 <span className="text-blue-500 italic text-3xl md:text-6xl lg:text-7xl">JOURNEY</span>
               </h2>
@@ -59,36 +59,36 @@ const Join = () => {
                 >
                   <div className="space-y-6">
                     <div className="space-y-3">
-                      <label className="text-[9px] font-serif font-black uppercase tracking-[0.3em] text-gray-500 block ml-1 opacity-70">Full Name</label>
+                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 block ml-1 opacity-70">Full Name</label>
                       <input
                         type="text"
                         required
                         placeholder="FULL NAME"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[13px] font-serif font-bold text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-gray-800 uppercase"
+                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[14px] font-serif font-black text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-gray-800 uppercase"
                       />
                     </div>
 
                     <div className="space-y-3">
-                      <label className="text-[9px] font-serif font-black uppercase tracking-[0.3em] text-gray-500 block ml-1 opacity-70">Primary Link (Phone)</label>
+                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 block ml-1 opacity-70">Primary Link (Phone)</label>
                       <input
                         type="tel"
                         required
                         placeholder="+91 00000 00000"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[13px] font-serif font-bold text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-gray-800"
+                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[14px] font-serif font-black text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-gray-800"
                       />
                     </div>
 
                     <div className="space-y-3">
-                      <label className="text-[9px] font-serif font-black uppercase tracking-[0.3em] text-gray-500 block ml-1 opacity-70">Training Goal</label>
+                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 block ml-1 opacity-70">Training Goal</label>
                       <div className="relative">
                         <select
                           value={formData.goal}
                           onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
-                          className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[13px] font-serif font-bold text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all appearance-none cursor-pointer uppercase"
+                          className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[14px] font-serif font-black text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all appearance-none cursor-pointer uppercase"
                         >
                           <option>Muscle Gain</option>
                           <option>Fat Loss</option>
@@ -104,12 +104,12 @@ const Join = () => {
                     </div>
 
                     <div className="space-y-3">
-                      <label className="text-[9px] font-serif font-black uppercase tracking-[0.3em] text-gray-500 block ml-1 opacity-70">Select Your Slot</label>
+                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 block ml-1 opacity-70">Select Your Slot</label>
                       <div className="relative">
                         <select
                           value={formData.slot}
                           onChange={(e) => setFormData({ ...formData, slot: e.target.value })}
-                          className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[13px] font-serif font-bold text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all appearance-none cursor-pointer uppercase"
+                          className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[14px] font-serif font-black text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all appearance-none cursor-pointer uppercase"
                         >
                           <option>Morning (6AM - 10AM)</option>
                           <option>Evening (4PM - 10PM)</option>
@@ -125,7 +125,7 @@ const Join = () => {
 
                   <button
                     type="submit"
-                    className="group relative w-full bg-blue-600 hover:bg-blue-700 text-white font-serif font-black uppercase tracking-[0.3em] py-6 text-[11px] rounded-xl transition-all shadow-xl shadow-blue-600/20 flex items-center justify-center gap-4 active:scale-[0.98]"
+                    className="group relative w-full bg-blue-600 hover:bg-blue-700 text-white font-serif font-black uppercase tracking-tighter py-6 text-[14px] rounded-xl transition-all shadow-xl shadow-blue-600/20 flex items-center justify-center gap-4 active:scale-[0.98]"
                   >
                     JOIN NOW
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-2 transition-transform duration-500">
@@ -147,14 +147,14 @@ const Join = () => {
                     </svg>
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-black uppercase text-white tracking-tight leading-none">Registration Successful</h3>
+                    <h3 className="text-2xl font-serif font-black uppercase text-white tracking-tighter leading-none">Registration Successful</h3>
                     <p className="text-gray-500 text-sm font-medium tracking-wide leading-relaxed opacity-80">
                       Welcome to the program. We've received your request and will reach out on WhatsApp with your training schedule soon.
                     </p>
                   </div>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="text-blue-500 text-[10px] font-black uppercase tracking-[0.4em] hover:text-blue-400 transition-colors pt-4"
+                    className="text-blue-500 text-[12px] font-serif font-black uppercase tracking-tighter hover:text-blue-400 transition-colors pt-4"
                   >
                     REGISTER ANOTHER MEMBER
                   </button>

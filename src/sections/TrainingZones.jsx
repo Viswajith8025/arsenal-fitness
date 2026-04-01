@@ -7,7 +7,7 @@ const ZoneCard = ({ title, desc, img }) => (
       <img src={img} alt={title} className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
     </div>
     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 space-y-3">
-      <h3 className="text-2xl font-serif font-black uppercase tracking-tight text-white">{title}</h3>
+      <h3 className="text-2xl font-serif font-black uppercase tracking-tighter text-white">{title}</h3>
       <p className="text-xs text-gray-400 font-medium leading-relaxed line-clamp-3">
         {desc}
       </p>

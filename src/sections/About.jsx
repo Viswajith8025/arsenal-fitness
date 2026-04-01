@@ -16,8 +16,8 @@ const About = () => {
       {/* Content Side */}
       <div className="md:w-1/2 flex flex-col justify-center px-8 md:px-16 py-20 md:py-32 space-y-10 bg-black">
         <div className="space-y-2">
-          <span className="text-blue-500 text-[10px] font-serif font-black uppercase tracking-[0.6em]">Our Philosophy</span>
-          <h2 className="text-3xl md:text-6xl font-serif font-black uppercase tracking-tight text-white leading-tight">
+          <span className="text-blue-500 text-[12px] font-serif font-black uppercase tracking-tighter">Our Philosophy</span>
+          <h2 className="text-3xl md:text-6xl font-serif font-black uppercase tracking-tighter text-white leading-tight">
             This is not a gym.{' '}
             <span className="text-blue-500">This is a transformation hub.</span>
           </h2>
@@ -36,16 +36,16 @@ const About = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div>
             <h4 className="text-4xl font-serif font-black text-white italic tracking-tighter">3</h4>
-            <p className="text-[11px] font-serif font-black uppercase tracking-widest text-blue-500 mt-1">Elite Coaches</p>
+            <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500 mt-1">Elite Coaches</p>
           </div>
           <div>
             <h4 className="text-4xl font-serif font-black text-white italic tracking-tighter">600+</h4>
-            <p className="text-[11px] font-serif font-black uppercase tracking-widest text-blue-500 mt-1">Members Enrolled</p>
+            <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500 mt-1">Members Enrolled</p>
           </div>
         </div>
 
         <div>
-          <a href="#training-zones" className="text-[11px] font-serif font-black uppercase tracking-[0.3em] text-blue-500 flex items-center gap-3 hover:gap-5 transition-all">
+          <a href="#training-zones" className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500 flex items-center gap-3 hover:gap-5 transition-all">
             Learn The Arsenal Way <span className="block w-8 h-px bg-blue-500"></span>
           </a>
         </div>

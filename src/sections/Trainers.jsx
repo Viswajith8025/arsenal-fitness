@@ -37,7 +37,7 @@ const TrainerModal = ({ trainer, onClose }) => {
         <div className="p-8 md:p-12 space-y-10">
           <div className="space-y-4">
             <div className="space-y-1">
-              <p className="text-[10px] font-serif font-black uppercase tracking-[0.4em] text-blue-500">
+              <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500">
                 {trainer.specialty}
               </p>
               <h3 className="text-3xl md:text-5xl font-serif font-black uppercase tracking-tighter text-white">
@@ -45,7 +45,7 @@ const TrainerModal = ({ trainer, onClose }) => {
               </h3>
             </div>
             {trainer.role && (
-              <span className="inline-block text-[10px] font-serif font-black uppercase tracking-widest bg-blue-600 px-4 py-1.5 rounded-full text-white">
+              <span className="inline-block text-[12px] font-serif font-black uppercase tracking-tighter bg-blue-600 px-4 py-1.5 rounded-full text-white">
                 {trainer.role}
               </span>
             )}
@@ -53,7 +53,7 @@ const TrainerModal = ({ trainer, onClose }) => {
 
           <div className="space-y-8">
             <div className="space-y-4">
-              <h4 className="text-[11px] font-black uppercase tracking-widest text-gray-400 border-b border-white/5 pb-2">
+              <h4 className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-400 border-b border-white/5 pb-2">
                 Qualifications
               </h4>
               <ul className="space-y-3">
@@ -67,7 +67,7 @@ const TrainerModal = ({ trainer, onClose }) => {
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-[11px] font-black uppercase tracking-widest text-gray-400 border-b border-white/5 pb-2">
+              <h4 className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-400 border-b border-white/5 pb-2">
                 Achievements
               </h4>
               <ul className="space-y-3">
@@ -83,7 +83,7 @@ const TrainerModal = ({ trainer, onClose }) => {
 
           <button
             onClick={onClose}
-            className="w-full bg-white/5 border border-white/10 text-white text-[11px] font-black uppercase tracking-[0.2em] py-5 rounded-2xl active:bg-white/10 shadow-xl"
+            className="w-full bg-white/5 border border-white/10 text-white text-[14px] font-serif font-black uppercase tracking-tighter py-5 rounded-2xl active:bg-white/10 shadow-xl"
           >
             Close Detail
           </button>
@@ -105,11 +105,11 @@ const TrainerCard = ({ trainer, onOpen }) => (
         className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
       />
       <div className="absolute inset-x-0 bottom-0 p-8 pt-20 bg-gradient-to-t from-black via-black/40 to-transparent">
-        <p className="text-[9px] font-serif font-black uppercase tracking-[0.4em] text-blue-500 mb-2">
+        <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500 mb-2">
           {trainer.specialty}
         </p>
-        <h4 className="text-2xl font-serif font-black uppercase tracking-tight text-white">{trainer.name}</h4>
-        <p className="text-[8px] font-serif font-black uppercase tracking-[0.2em] text-gray-500 mt-2 border-t border-white/10 pt-2 inline-block">
+        <h4 className="text-2xl font-serif font-black uppercase tracking-tighter text-white">{trainer.name}</h4>
+        <p className="text-[10px] font-serif font-black uppercase tracking-tighter text-gray-500 mt-2 border-t border-white/10 pt-2 inline-block">
           {trainer.role}
         </p>
       </div>
@@ -117,7 +117,7 @@ const TrainerCard = ({ trainer, onOpen }) => (
 
     <div className="flex items-center justify-between px-2">
       <div className="h-px flex-1 bg-white/5" />
-      <span className="text-[10px] font-serif font-black uppercase tracking-[0.3em] text-gray-700 mx-4">View Expertise</span>
+      <span className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-700 mx-4">View Expertise</span>
       <div className="h-px flex-1 bg-white/5" />
     </div>
   </div>
