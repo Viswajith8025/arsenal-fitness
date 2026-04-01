@@ -73,7 +73,7 @@ const Navbar = () => {
           onClick={handleLogoClick}
           className="flex items-center gap-4 cursor-pointer select-none group"
         >
-          <img src="/images/Logo.jpeg" alt="Arsenal Fitness" className="w-10 h-10 object-contain transition-transform group-hover:scale-105" />
+          <img src="/images/Logoo.png" alt="Arsenal Fitness" className="w-10 h-10 object-contain transition-transform group-hover:scale-105" />
           <span className="text-2xl font-serif font-black uppercase tracking-tighter text-white transition-all duration-300 group-hover:text-white">
             Arsenal <span className="text-blue-500">Fitness</span>
           </span>
