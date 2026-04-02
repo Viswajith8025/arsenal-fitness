@@ -44,7 +44,7 @@ const RadialGauge = ({ value }) => {
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
-        <span className="text-4xl md:text-5xl font-black text-white italic tracking-tighter">
+        <span className="text-4xl md:text-5xl font-space font-bold text-white uppercase">
           {value}
         </span>
         <span className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 mt-1">BMI</span>
@@ -203,7 +203,7 @@ const BMICalculator = () => {
                   <div className="space-y-4 text-center md:text-left">
                     <p className="text-[12px] text-gray-600 font-serif font-black uppercase tracking-tighter">Daily Energy Target</p>
                     <div className="flex items-end justify-center md:justify-start gap-2">
-                       <span className="text-6xl font-serif font-black text-white italic leading-none">{result.tdee}</span>
+                       <span className="text-6xl font-space font-bold text-white leading-none">{result.tdee}</span>
                        <span className="text-[14px] font-serif font-black uppercase text-blue-500 pb-1 tracking-tighter">kCal</span>
                     </div>
                   </div>

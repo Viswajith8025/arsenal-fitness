@@ -35,11 +35,11 @@ const About = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div>
-            <h4 className="text-4xl font-serif font-black text-white italic tracking-tighter">3</h4>
+            <h4 className="text-4xl font-barlow font-black text-white uppercase">3</h4>
             <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500 mt-1">Elite Coaches</p>
           </div>
           <div>
-            <h4 className="text-4xl font-serif font-black text-white italic tracking-tighter">600+</h4>
+            <h4 className="text-4xl font-barlow font-black text-white uppercase">600+</h4>
             <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500 mt-1">Members Enrolled</p>
           </div>
         </div>

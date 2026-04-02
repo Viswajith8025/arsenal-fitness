@@ -153,7 +153,10 @@ const Join = () => {
                     </p>
                   </div>
                   <button
-                    onClick={() => setIsSubmitted(false)}
+                    onClick={() => {
+                      setFormData({ name: '', phone: '', goal: 'Muscle Gain', slot: 'Morning (6AM - 10AM)' });
+                      setIsSubmitted(false);
+                    }}
                     className="text-blue-500 text-[12px] font-serif font-black uppercase tracking-tighter hover:text-blue-400 transition-colors pt-4"
                   >
                     REGISTER ANOTHER MEMBER

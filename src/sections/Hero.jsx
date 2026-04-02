@@ -52,10 +52,10 @@ const Hero = () => {
             JOIN NOW
           </a>
           <a
-            href="#join"
+            href="#pricing"
             className="flex-1 bg-white/5 border border-white/10 hover:border-white/20 text-white font-serif font-black uppercase tracking-tighter py-5 text-[14px] rounded-xl transition-all text-center backdrop-blur-md"
           >
-            BOOK YOUR SLOT
+            VIEW PRICING
           </a>
         </div>
       </div>

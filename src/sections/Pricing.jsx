@@ -7,8 +7,8 @@ const PriceRow = ({ label, price }) => (
       {label}
     </span>
     <div className="flex items-center gap-1.5">
-      <span className="text-blue-500 text-[10px] font-serif font-black opacity-70">₹</span>
-      <span className="text-white font-serif font-black text-xl tracking-tighter leading-none group-hover/row:text-blue-400 transition-colors">
+      <span className="text-blue-500 text-[10px] font-barlow font-bold opacity-70">₹</span>
+      <span className="text-white font-barlow font-bold text-xl leading-none group-hover/row:text-blue-400 transition-colors">
         {price}
       </span>
     </div>

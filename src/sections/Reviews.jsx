@@ -26,24 +26,6 @@ const ReviewCard = ({ name, role, review, rating }) => (
 const Reviews = () => {
   const reviews = [
     {
-      name: "Viswajith E",
-      role: "Elite Member",
-      review: "Arsenal Fitness is hands down the best gym I’ve joined so far. The ambience is great and keeps you motivated every day. The equipment is top quality and well maintained, making workouts smooth and effective. Special shoutout to the trainers — Rishikesh CP, Sharan, Kiran, and Vignesh — who are super supportive, knowledgeable, and always push you to do better. Highly recommended for anyone serious about fitness!",
-      rating: 5
-    },
-    {
-      name: "Ananthu Krishna",
-      role: "Elite Member",
-      review: "Arsenal Fitness has been an amazing place for my fitness journey The workouts here are well-structured and effective, whether you’re into strength training or just getting started. The trainers are super supportive, knowledgeable, and always ready to guide you with proper form and motivation. What really stands out is the vibe—positive, energetic, and welcoming. It’s the kind of place that keeps you motivated to show up every day.I Highly recommend Arsenal Fitness to anyone looking for a great workout environment with excellent trainers and a motivating atmosphere!",
-      rating: 5
-    },
-    {
-      name: "Athul A K",
-      role: "Elite Member",
-      review: "Arsenal Fitness stands out as the premium gym I have experienced. Its exceptional ambiance fosters daily motivation, while the top-quality, well-maintained equipment ensures seamless and effective workouts.I extend my sincere gratitude to the trainers—Rishikesh CP, Sharan, and Vignesh for their unwavering support, extensive knowledge, and consistent encouragement. I wholeheartedly recommend their professional services to all individuals dedicated to achieving their fitness goals.",
-      rating: 5
-    },
-    {
       name: "Harishma Girish",
       role: "Member",
       review: "Best gym in the locality! Love the aesthetics, quite spacious, good equipments, squeaky clean, separate changing room for women and most importantly, quite AFFORDABLE.Great community spirit! They go out of their way to keep things interesting for us, be it outdoor group workouts, birthday celebrations, trips or just grabbing breakfast together. Not to mention how supportive Sharan and Rishikesh are as our trainers. Excellent place to workout without burning a hole in your pocket.Highly recommend Arsenal fitness! 👌",
@@ -59,6 +41,24 @@ const Reviews = () => {
       name: "Harsha",
       role: "Personal Trainee",
       review: "Arsenal Fitness Center is an exceptional gym with top-notch equipment and a wide variety of classes. The personal trainers are knowledgeable and dedicated, offering tailored workout plans to meet individual goals. The facility is always clean and well-maintained, creating a pleasant workout environment. Friendly staff and members foster a strong sense of community and motivation. With excellent amenities and flexible membership options, arsenal Fitness Center is an outstanding choice for fitness enthusiasts.",
+      rating: 5
+    },
+    {
+      name: "Viswajith E",
+      role: "Elite Member",
+      review: "Arsenal Fitness is hands down the best gym I’ve joined so far. The ambience is great and keeps you motivated every day. The equipment is top quality and well maintained, making workouts smooth and effective. Special shoutout to the trainers — Rishikesh CP, Sharan, Kiran, and Vignesh — who are super supportive, knowledgeable, and always push you to do better. Highly recommended for anyone serious about fitness!",
+      rating: 5
+    },
+    {
+      name: "Ananthu Krishna",
+      role: "Elite Member",
+      review: "Arsenal Fitness has been an amazing place for my fitness journey The workouts here are well-structured and effective, whether you’re into strength training or just getting started. The trainers are super supportive, knowledgeable, and always ready to guide you with proper form and motivation. What really stands out is the vibe—positive, energetic, and welcoming. It’s the kind of place that keeps you motivated to show up every day.I Highly recommend Arsenal Fitness to anyone looking for a great workout environment with excellent trainers and a motivating atmosphere!",
+      rating: 5
+    },
+    {
+      name: "Athul A K",
+      role: "Elite Member",
+      review: "Arsenal Fitness stands out as the premium gym I have experienced. Its exceptional ambiance fosters daily motivation, while the top-quality, well-maintained equipment ensures seamless and effective workouts.I extend my sincere gratitude to the trainers—Rishikesh CP, Sharan, and Vignesh for their unwavering support, extensive knowledge, and consistent encouragement. I wholeheartedly recommend their professional services to all individuals dedicated to achieving their fitness goals.",
       rating: 5
     },
     {
@@ -111,14 +111,14 @@ const Reviews = () => {
           <div className="relative flex flex-wrap justify-center lg:justify-between items-center gap-12 pt-20 border-t border-white/5">
             <div className="flex gap-12 md:gap-24">
               <div className="space-y-2 text-center md:text-left">
-                <p className="text-4xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">4.9/5</p>
+                <p className="text-4xl md:text-7xl font-barlow font-black text-white leading-none">4.9/5</p>
                 <div className="flex flex-col">
                   <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500">Google Rating</p>
                   <p className="text-[10px] font-serif font-black uppercase tracking-tighter text-gray-600 mt-1">Certified Excellence</p>
                 </div>
               </div>
               <div className="space-y-2 text-center md:text-left">
-                <p className="text-4xl md:text-7xl font-serif font-black text-white italic leading-none tracking-tighter">170+</p>
+                <p className="text-4xl md:text-7xl font-barlow font-black text-white leading-none">170+</p>
                 <div className="flex flex-col">
                   <p className="text-[12px] font-serif font-black uppercase tracking-tighter text-blue-500">Member Reviews</p>
                   <p className="text-[10px] font-serif font-black uppercase tracking-tighter text-gray-600 mt-1">Verified Community</p>

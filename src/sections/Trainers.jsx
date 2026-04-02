@@ -66,19 +66,21 @@ const TrainerModal = ({ trainer, onClose }) => {
               </ul>
             </div>
 
-            <div className="space-y-4">
-              <h4 className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-400 border-b border-white/5 pb-2">
-                Achievements
-              </h4>
-              <ul className="space-y-3">
-                {trainer.achievements.map((a, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                    <span className="text-sm font-medium text-gray-300">{a}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {trainer.achievements && trainer.achievements.length > 0 && (
+              <div className="space-y-4">
+                <h4 className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-400 border-b border-white/5 pb-2">
+                  Achievements
+                </h4>
+                <ul className="space-y-3">
+                  {trainer.achievements.map((a, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+                      <span className="text-sm font-medium text-gray-300">{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
           <button
@@ -144,8 +146,8 @@ const Trainers = () => {
       specialty: 'Functional Training',
       role: 'OWNER',
       img: '/images/rishi.jpeg',
-      qualifications: ['CFSC L1 & L2', 'FMS Certified Specialist', 'ASCA Speed & Power Coach'],
-      achievements: ['Founded Arsenal Fitness 2017', 'Personal Coach to 100+ Athletes', 'Pioneer in Calicut Fitness Hub']
+      qualifications: ['Certified in Fitness Centre Management', 'ACE Level 3 Personal Trainer', 'Skill India Certified'],
+      achievements: ['Founded Arsenal Fitness in 2022', 'Personal Coach to 100+ Clients', 'Pioneer in Calicut\'s Fitness Hub']
     },
     {
       name: 'Sharan Rajendran',
@@ -160,8 +162,15 @@ const Trainers = () => {
       specialty: 'Transformation',
       role: 'SUB COACH',
       img: '/images/vigneshh.webp',
-      qualifications: ['HIIT & Body Composition Cert', 'Diet & Nutrition Planning', 'Functional Bodyweight Expert'],
-      achievements: ['Success Rate 90%+ Transformations', 'Group Class Lead Instructor', 'Expert Mobility Coach']
+      qualifications: [
+        'PG Diploma in Advanced Personal Training & Sports Nutrition',
+        'NSQF Level 5 Personal Trainer',
+        'Active IQ EQF Level 4 Personal Trainer',
+        'Certified Sports Nutritionist',
+        'Posture, Mobility & Corrective Exercise Specialist',
+        'Client Assessment & Progress Management Specialist'
+      ],
+      achievements: []
     }
   ];
 
