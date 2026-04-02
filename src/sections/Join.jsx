@@ -59,31 +59,31 @@ const Join = () => {
                 >
                   <div className="space-y-6">
                     <div className="space-y-3">
-                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 block ml-1 opacity-70">Full Name</label>
+                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-white block ml-1">Full Name</label>
                       <input
                         type="text"
                         required
-                        placeholder="FULL NAME"
+                        placeholder="ENTER YOUR NAME"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[14px] font-serif font-black text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-gray-800 uppercase"
+                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[14px] font-serif font-black text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-gray-600/50 uppercase"
                       />
                     </div>
 
                     <div className="space-y-3">
-                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 block ml-1 opacity-70">Primary Link (Phone)</label>
+                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-white block ml-1">Mobile Number</label>
                       <input
                         type="tel"
                         required
                         placeholder="+91 00000 00000"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[14px] font-serif font-black text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-gray-800"
+                        className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl px-7 py-5 text-[14px] font-serif font-black text-white outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-gray-600/50"
                       />
                     </div>
 
                     <div className="space-y-3">
-                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 block ml-1 opacity-70">Training Goal</label>
+                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-white block ml-1">Training Goal</label>
                       <div className="relative">
                         <select
                           value={formData.goal}
@@ -95,7 +95,7 @@ const Join = () => {
                           <option>Functional Fitness</option>
                           <option>Strength & Endurance</option>
                         </select>
-                        <div className="absolute right-7 top-1/2 -translate-y-1/2 pointer-events-none opacity-30">
+                        <div className="absolute right-7 top-1/2 -translate-y-1/2 pointer-events-none opacity-50">
                           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M6 9l6 6 6-6" />
                           </svg>
@@ -104,7 +104,7 @@ const Join = () => {
                     </div>
 
                     <div className="space-y-3">
-                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-gray-500 block ml-1 opacity-70">Select Your Slot</label>
+                      <label className="text-[12px] font-serif font-black uppercase tracking-tighter text-white block ml-1">Select Your Slot</label>
                       <div className="relative">
                         <select
                           value={formData.slot}
@@ -114,7 +114,7 @@ const Join = () => {
                           <option>Morning (6AM - 10AM)</option>
                           <option>Evening (4PM - 10PM)</option>
                         </select>
-                        <div className="absolute right-7 top-1/2 -translate-y-1/2 pointer-events-none opacity-30">
+                        <div className="absolute right-7 top-1/2 -translate-y-1/2 pointer-events-none opacity-50">
                           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M6 9l6 6 6-6" />
                           </svg>

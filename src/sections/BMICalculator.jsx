@@ -54,13 +54,13 @@ const RadialGauge = ({ value }) => {
 };
 
 const BMICalculator = () => {
-  const [weight, setWeight] = useState('70');
-  const [height, setHeight] = useState('175');
-  const [age, setAge] = useState('25');
+  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState('');
+  const [age, setAge] = useState('');
   const [gender, setGender] = useState('male');
   const [activity, setActivity] = useState('1.55');
   const [goal, setGoal] = useState('maintain');
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState({ bmi: 0, tdee: 0 });
 
   useEffect(() => {
     if (weight && height && age) {
@@ -77,19 +77,20 @@ const BMICalculator = () => {
 
       setResult({ bmi, tdee: targetCalories });
     } else {
-      setResult(null);
+      setResult({ bmi: 0, tdee: 0 });
     }
   }, [weight, height, age, gender, activity, goal]);
 
   const getAssessment = (bmi) => {
+    if (bmi === 0) return { label: 'Awaiting Vitals', color: 'text-gray-500', desc: 'Enter your weight, height, and age for a personalized health assessment.' };
     if (bmi < 18.5) return { label: 'Underweight', color: 'text-yellow-500', desc: 'You need a structured caloric surplus for muscle development.' };
     if (bmi < 25) return { label: 'Healthy', color: 'text-blue-500', desc: 'Your vitals are in the optimal range. Focus on conditioning.' };
     if (bmi < 30) return { label: 'Overweight', color: 'text-orange-500', desc: 'Strategic body recomposition and HIIT training are recommended.' };
     return { label: 'Obese', color: 'text-red-500', desc: 'Urgent focus on consistent activity and nutritional discipline required.' };
   };
 
-  const inputClass = "w-full bg-black border border-white/10 rounded-2xl px-6 py-5 text-sm font-serif font-black text-white outline-none focus:border-blue-500/50 transition-colors uppercase";
-  const labelClass = "text-[12px] font-serif font-black uppercase tracking-tighter text-gray-600 px-1 mb-2 block";
+  const inputClass = "w-full bg-black border border-white/10 rounded-2xl px-6 py-5 text-sm font-serif font-black text-white outline-none focus:border-blue-500/50 transition-colors uppercase placeholder:text-gray-600/50";
+  const labelClass = "text-[12px] font-serif font-black uppercase tracking-tighter text-white px-1 mb-2 block";
 
   return (
     <section id="bmi" className="bg-black py-24 md:py-32 px-6 border-t border-white/5">
@@ -108,18 +109,18 @@ const BMICalculator = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className={labelClass}>Weight (kg)</label>
-                <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className={inputClass} />
+                <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="70" className={inputClass} />
               </div>
               <div className="space-y-2">
                 <label className={labelClass}>Height (cm)</label>
-                <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} className={inputClass} />
+                <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} placeholder="175" className={inputClass} />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className={labelClass}>Age</label>
-                <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className={inputClass} />
+                <input type="number" value={age} onChange={(e) => setAge(e.target.value)} placeholder="25" className={inputClass} />
               </div>
               <div className="space-y-2">
                 <label className={labelClass}>Gender</label>
@@ -129,7 +130,7 @@ const BMICalculator = () => {
                     <option value="female">Female</option>
                   </select>
                   <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
-                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1L5 5L9 1" /></svg>
                   </div>
                 </div>
               </div>
@@ -154,8 +155,7 @@ const BMICalculator = () => {
 
         {/* Output Column */}
         <div className="relative">
-          {result ? (
-            <div className="bg-[#0b0b0c] border border-white/10 rounded-[2.5rem] p-8 md:p-12 space-y-12 shadow-2xl shadow-blue-600/5">
+          <div className="bg-[#0b0b0c] border border-white/10 rounded-[2.5rem] p-8 md:p-12 space-y-12 shadow-2xl shadow-blue-600/5">
               <div className="flex flex-col md:flex-row items-center gap-10">
                 <RadialGauge value={result.bmi} />
                 <div className="flex-grow space-y-4 text-center md:text-left">
@@ -201,10 +201,12 @@ const BMICalculator = () => {
                 {/* Main Metric */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-end pt-8 border-t border-white/5">
                   <div className="space-y-4 text-center md:text-left">
-                    <p className="text-[12px] text-gray-600 font-serif font-black uppercase tracking-tighter">Daily Energy Target</p>
-                    <div className="flex items-end justify-center md:justify-start gap-2">
-                       <span className="text-6xl font-space font-bold text-white leading-none">{result.tdee}</span>
-                       <span className="text-[14px] font-serif font-black uppercase text-blue-500 pb-1 tracking-tighter">kCal</span>
+                    <div className="flex flex-col">
+                      <p className="text-[12px] text-gray-600 font-serif font-black uppercase tracking-tighter">Daily Energy Target</p>
+                      <div className="flex items-end justify-center md:justify-start gap-2 mt-2">
+                        <span className="text-6xl font-space font-bold text-white leading-none">{result.tdee}</span>
+                        <span className="text-[14px] font-serif font-black uppercase text-blue-500 pb-1 tracking-tighter">kCal</span>
+                      </div>
                     </div>
                   </div>
 
@@ -233,14 +235,7 @@ const BMICalculator = () => {
                   </Button>
                 </a>
               </div>
-            </div>
-          ) : (
-            <div className="h-[400px] lg:h-full w-full bg-[#0b0b0c] rounded-[2.5rem] border border-dashed border-white/10 flex items-center justify-center p-12 text-center">
-              <p className="text-gray-600 font-serif font-black uppercase tracking-tighter text-[12px]">
-                Enter your details to calculate results...
-              </p>
-            </div>
-          )}
+          </div>
         </div>
 
       </div>
