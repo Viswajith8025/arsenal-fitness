@@ -17,8 +17,8 @@ const Join = () => {
     };
     localStorage.setItem('arsenal_leads', JSON.stringify([...leads, newLead]));
 
-    // WhatsApp notification
-    const message = `NEW REGISTRATION: ${formData.name.toUpperCase()} has joined the squad! PHONE: ${formData.phone}. GOAL: ${formData.goal.toUpperCase()}. SLOT: ${formData.slot.toUpperCase()}.`;
+    // WhatsApp notification - Professional & User-Centric
+    const message = `Hi Arsenal Fitness! I'm ${formData.name}. I just registered on your website for the ${formData.goal} program (${formData.slot}). Looking forward to start my journey!`;
     window.open(`https://wa.me/917306675524?text=${encodeURIComponent(message)}`, '_blank');
 
     setIsSubmitted(true);
@@ -34,8 +34,8 @@ const Join = () => {
             <div className="space-y-4">
               <span className="text-blue-500 text-[12px] font-serif font-black uppercase tracking-tighter block">Join the Community</span>
               <h2 className="text-4xl md:text-7xl lg:text-8xl font-serif font-black uppercase tracking-tighter text-white leading-none">
-                START YOUR <br />
-                <span className="text-blue-500 italic text-3xl md:text-6xl lg:text-7xl">JOURNEY</span>
+                START  YOUR <br />
+                <span className="text-blue-500 text-3xl md:text-6xl lg:text-7xl">JOURNEY</span>
               </h2>
             </div>
 

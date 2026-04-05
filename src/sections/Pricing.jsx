@@ -113,7 +113,6 @@ const Pricing = () => {
     {
       tier: 'Elite PT',
       subtitle: 'Personal',
-      badge: 'Students Get 20% Off',
       prices: [
         { label: 'Individual PT', price: '6,000' },
         { label: 'Couple PT', price: '10,000' }
