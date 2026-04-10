@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section id="about" className="bg-black min-h-screen flex flex-col md:flex-row items-stretch">
       {/* Image Side - Interactive Interior Gallery */}
-      <div 
+      <div
         className="md:w-1/2 relative min-h-[50vh] md:min-h-screen cursor-zoom-in group"
         onClick={() => setIsModalOpen(true)}
       >
@@ -18,7 +18,7 @@ const About = () => {
           className="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700 ease-out"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent md:bg-gradient-to-r md:from-black md:via-black/40 md:to-transparent pointer-events-none"></div>
-        
+
         {/* Hover Indicator */}
         <div className="absolute bottom-10 left-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <p className="text-[10px] font-serif font-black uppercase tracking-widest text-blue-500 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full border border-blue-500/30">
@@ -27,10 +27,10 @@ const About = () => {
         </div>
       </div>
 
-      <ImageGalleryModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        images={interiorImage} 
+      <ImageGalleryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        images={interiorImage}
       />
 
       {/* Content Side */}

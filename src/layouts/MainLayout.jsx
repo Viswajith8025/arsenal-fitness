@@ -22,9 +22,9 @@ const MainLayout = ({ children }) => {
         {children}
       </main>
       <Footer />
-      <AdminPortal 
-        isOpen={isAdminPortalOpen} 
-        onClose={() => setIsAdminPortalOpen(false)} 
+      <AdminPortal
+        isOpen={isAdminPortalOpen}
+        onClose={() => setIsAdminPortalOpen(false)}
       />
       <WhatsAppButton />
     </div>

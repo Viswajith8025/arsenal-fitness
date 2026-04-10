@@ -70,7 +70,15 @@ const Footer = () => {
       {/* Copyright & Branding */}
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center px-6">
         <p className="text-[12px] text-gray-600 font-serif font-black uppercase tracking-tighter leading-relaxed">
-          © 2026 Arsenal Fitness • Crafted with precision by <span className="text-blue-500 hover:text-blue-400 transition-colors duration-300">VISWAJITH</span>
+          © 2026 Arsenal Fitness • Crafted with precision by{" "}
+          <a
+            href="https://viswajith-ten.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-400 transition-colors duration-300"
+          >
+            VISWAJITH
+          </a>
         </p>
       </div>
     </footer>
